@@ -1,0 +1,392 @@
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  CSS for the Upper Header          !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+/* The upper header css block */
+#upperheader{
+width:100%;
+height:70px;
+min-width:500px;	
+} 
+
+/* The logo block on the left */
+#logo {
+	background-color: #ffffff;
+	padding-left: 25px;
+	float:left;
+}
+
+/* The links block on the right */
+#toplinks {
+	background-color: #ffffff;
+	float:right;
+}
+
+/* The list properties for the links */
+#toplinks li {
+	float:right;
+	display: inline;
+	border: solid;
+	border-width: 0px;
+	background-color: #ffffff;
+	margin-top: 0px;
+	margin-right: 10px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	color: #ffffff;
+}
+
+/* The link properties */
+#toplinks li a {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px; 
+	color: #183C66;
+	display:block;
+	outline:0;
+	text-decoration:none;
+}
+
+/* The link properties on hover*/
+#toplinks li :hover {
+	color: #F8C600;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  End CSS for the Upper Header          !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  Start CSS for the Lower Header    !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/* The outer box for the lower header */
+#lowerheader {
+	width:100%;
+	height:50px;
+	min-width:600px;
+    overflow: hidden;
+
+
+	/* Background color and gradients */
+	background: #00339A;
+	background: -moz-linear-gradient(top, #00339A 0%, #183C66 200%);
+	background: -webkit-gradient(linear, 0% 0%, 0% 200%, from(#00339A), to(#183C66));
+	
+	/* Borders */
+	border-top-style: none;
+	border-right-style:none;
+	border-bottom-style:solid;
+	border-left-style:none;
+	border-color:#000;
+	border-bottom-width:1px;
+
+     /* Shadows */
+	-moz-box-shadow:inset 0px 0px 1px #edf9ff;
+	-webkit-box-shadow:inset 0px 0px 1px #edf9ff;
+	box-shadow:inset 0px 0px 1px #edf9ff;
+}
+
+/* The box that contains the Catalog button */
+nav ul {
+	width:130px;
+	padding-left:35px;  
+	
+}
+
+
+/* Hides all the submenus, unless hover over */
+nav ul ul {
+	display: none;
+	width:50px;  
+}
+
+/* The > child selector makes sure only the child UL of the LI being hovered is targeted, rather than all sub menus appearing at once.*/
+nav ul li:hover > ul {
+	display: block;
+}
+
+
+nav  li ul ul:hover {
+	
+}
+
+
+/*  Removes dot infront of first entry */
+nav ul {  
+	list-style: none;
+	position: absolute;
+}
+
+
+
+/*  The first thing you see on the screen */
+nav ul li {
+	float: left; /*  Limits the size of the menu to not the whole screen */
+	text-align: center;
+	font-size:22px; /* Font Size for 'Menu' links */
+	width:120px;   /* Width of menu Box */
+	height:35px;   /* Height of menu Box */
+    background: linear-gradient(top, #ffffff 30%, #c0c0c0 150%);
+	background: -moz-linear-gradient(top, #ffffff 30%, #c0c0c0 150%);
+	background: -webkit-gradient(linear, 0% 30%, 0% 150%, from(#ffffff), to(#c0c0c0));
+	border-radius: 10px;  
+	margin-right:15px;
+    margin-top:9px;
+	
+}
+
+
+
+nav ul li:hover {
+		background: #ffffff;
+
+}
+
+
+
+
+
+/*  Item colors on hover */	
+nav ul li:hover a {
+		color: black;
+}
+
+/*  Main menu properties  */
+nav ul li a {
+		display: block; 
+		padding-top:7px;  /*  Space on top of 'catalog'  */
+		padding-bottom:14px; /*  Space below 'catalog'  */
+		color: black;
+		text-decoration: none;
+		
+		
+}
+
+nav ul ul {
+	background: #5f6975; 
+	border-radius: 0px; 
+	padding: 0px; 
+	margin:0px;
+	z-index:1001;
+   
+}
+
+    /*  link list properties  */	
+    nav ul ul li {
+		float: none;  
+		border-top: none;
+		border-bottom: none;
+		position: relative;
+		background:#FFFFFF;
+	    font-size:14px; /* Font Size for Menu links */
+	    height:22px;
+		text-align: left;
+		width:250px;
+		padding: 0px;
+		padding-left:10px;
+		padding-top:5px;
+		margin:0px;
+		border-radius:0px;
+		box-shadow:  0px 1px 1px #888;
+		font-size:14px;
+	}
+		nav ul ul li a {
+			padding: 2px;
+			color: #fff;
+			margin:0px;
+			padding:0px;
+		}	
+			nav ul ul li a:hover {
+				background: #ffffff;
+				background: linear-gradient(top, #ffffff 0%, #ffffff 40%);
+				background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 40%);
+				background: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 40%);
+				color: #F8C600;
+				font-size:16px;
+			}
+			
+/*  Makes sublinks on the right  */			
+nav ul ul ul {
+	position: absolute; 
+	left: 100%; 
+	top:0;
+	z-index:1020;
+}
+
+nav ul ul ul li {
+	float: none;  
+	border-top: none;
+	border-bottom: none;
+	position: relative;
+	background:#FFFFFF;
+	
+	text-align: left;
+	width:400px;
+	padding: 0px;
+	padding-top:5px;
+	margin:0px;
+	padding-left:20px;
+	border-radius:0px;
+	z-index:1020;
+	
+}
+
+nav ul ul ul li:hover {
+	color: #F8C600;
+	font-size:16px;
+	
+}
+
+
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  End CSS for the Lower Header        !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  CSS for the Search Bar            !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+ 
+/* The block that says search on it */
+h1 { 
+    font-size: 22px;
+    float:left;
+	color:#F8C600;
+	display:block;
+	width:100px;
+	padding-left:170px;
+
+}
+
+
+
+form {
+    
+	min-width:200px;
+	font-size: 22px;
+	padding-top:1.5px;
+	float:left;
+	
+	/* Mozilla calc function */
+	width: -moz-calc(100% - 400px);
+    /* Webkit calc function */
+    width: -webkit-calc(100% - 400px);
+    /* Calc for W3C-compliant browsers */
+    width: calc(100% - 400px);
+    
+	
+}
+
+.searchinput{
+	
+	border-radius:7px;
+	height:25px;
+	/* Mozilla calc function */
+    width: -moz-calc(100% - 65px);
+    /* Webkit calc function */
+    width: -webkit-calc(100% - 65px);
+    /* Calc for W3C-compliant browsers */
+    width: calc(100% - 65px); 
+	text-align:left;
+	font-size:16px;
+	box-shadow: 1px 1px 5px #333;
+}
+
+input.submit{
+	width: 50px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	margin-top:12px;
+	color:#000;
+	border-radius:4px;
+	background: linear-gradient(top, #ffffff 30%, #c0c0c0 150%);
+	background: -moz-linear-gradient(top, #ffffff 30%, #c0c0c0 150%);
+	background: -webkit-gradient(linear, 0% 30%, 0% 150%, from(#ffffff), to(#c0c0c0));
+	
+}
+
+
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  End CSS for the Search Bar            !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  Begin CSS for the Cart            !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+	
+#cart { 
+	float:right; 
+	width:50px;
+	padding-top:4px;
+    padding-right:42px;
+}
+
+.Movetothecart {
+    background-color: #333333 !important;
+}
+
+.Entercart {
+    background-color: green !important;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  End CSS for the Cart            !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  Begin CSS for the Footer            !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+#footer {
+	width: 100%;
+	min-width:780px;
+	overflow:hidden;
+ 	clear: both;
+ 	position: relative;
+ 	margin:20px auto 0px auto;
+	height:50px;
+	padding:0px 0px 0px 0px;
+	
+
+	/* Rounded Corners 
+	
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+
+	/* Background color and gradients */
+	
+	background: #00339A;
+	background: -moz-linear-gradient(top, #00339A 0%, #183C66 200%);
+	background: -webkit-gradient(linear, 0% 0%, 0% 200%, from(#00339A), to(#183C66));
+	
+	/* Borders */
+	
+
+	border-top-style: none;
+	border-right-style:none;
+	border-bottom-style:solid;
+	border-left-style:none;
+	border-color:#000;
+	border-bottom-width:1px;
+
+	-moz-box-shadow:inset 0px 0px 1px #edf9ff;
+	-webkit-box-shadow:inset 0px 0px 1px #edf9ff;
+	box-shadow:inset 0px 0px 1px #edf9ff;
+
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ *!  End CSS for the Footer            !
+ *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/

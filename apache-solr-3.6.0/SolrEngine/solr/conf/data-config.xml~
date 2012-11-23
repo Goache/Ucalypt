@@ -1,0 +1,35 @@
+<dataConfig>
+
+<!--<dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/products" user="root" password="1118" />  
+
+<document>
+<entity name="Officetest" dataSource="mysql"
+   query="SELECT ManfNbr,PRODUCT_ID, Sell_price, URL FROM OfficeMax">
+ 
+   <field column="ManfNbr" name="id" />
+   <field column="PRODUCT_ID" name="productssid" />
+   <field column="Sell_price" name="sellprice" />
+   <field column="URL" name="picy" />
+
+
+</entity>
+-->
+
+<dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/products" user="root" password="1118" />    <!--jdbc:mysql://localhost:3306/products  products is the database    -->
+
+<document>
+<entity name="Officetest" dataSource="mysql"
+   query="SELECT ID, Name, Price, URL FROM OfficeMax">
+ 
+   <field column="ID" name="id" />
+   <field column="Name" name="productssid" />
+   <field column="Price" name="sellprice" />
+   <field column="URL" name="picy" />
+
+
+</entity>
+
+
+
+</document>
+</dataConfig>
