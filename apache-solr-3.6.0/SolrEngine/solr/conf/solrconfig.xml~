@@ -1357,7 +1357,7 @@
   </requestHandler>
 
 
-
+<!--
 <searchComponent name="suggest" class="solr.SpellCheckComponent">
  <lst name="spellchecker">
   <str name="name">suggest</str>
@@ -1379,6 +1379,53 @@
   <str>suggest</str>
  </arr>
 </requestHandler>
+
+
+-->
+
+
+
+<searchComponent name="suggest" class="solr.SpellCheckComponent">
+ <lst name="spellchecker">
+  <str name="name">suggest</str>
+  <str name="classname">org.apache.solr.spelling.suggest.Suggester</str>
+  <str name="lookupImpl">org.apache.solr.spelling.suggest.fst.FSTLookup</str>
+  <str name="field">name_autocomplete</str>
+  <float name="threshold">0.0000001</float>
+
+ </lst>
+
+
+</searchComponent>
+
+
+<requestHandler name="/suggest" class="org.apache.solr.handler.component.SearchHandler">
+ <lst name="defaults">
+  <str name="spellcheck">true</str>
+  <str name="spellcheck.dictionary">suggest</str>
+  <str name="spellcheck.onlyMorePopular">true</str>
+  <str name="spellcheck.count">10</str>
+  <str name="spellcheck.collate">false</str>
+ </lst>
+ <arr name="components">
+  <str>suggest</str>
+ </arr>
+</requestHandler>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- More Like This -->

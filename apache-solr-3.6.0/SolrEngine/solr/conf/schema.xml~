@@ -951,7 +951,7 @@
 
    <field name="sellprice" type="float" indexed="true" stored="true" required="true"/>
  <!--  <field name="productssid" type="text_general" indexed="true" stored="true" required="true"/>    -->
-<field name="productssid" type="text" indexed="true" stored="true" required="true"/> 
+<field name="productssid" type="text_general" indexed="true" stored="true" required="true"/> 
    <field name="picy" type="string" indexed="true" stored="true" required="true" /> 
    <field name="cat1" type="string" indexed="true" stored="true" required="true" /> 
    <field name="cat2" type="string" indexed="true" stored="true" required="true" /> 

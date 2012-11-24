@@ -188,14 +188,6 @@ if ($StartPosition-1 >= $NumFound-$NumFound %16){
 
 
 
-
-
-
-
-
-
-
-
 //stores the name of the current URL
 $currentURL=$_SERVER["REQUEST_URI"];
 
