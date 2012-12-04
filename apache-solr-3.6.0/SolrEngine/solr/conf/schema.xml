@@ -961,7 +961,7 @@
 
 <field name="name_autocomplete" type="suggestTextFull" indexed="true" stored="true" multiValued="false" /> 
 
-   <copyField source="productssid" dest="name_autocomplete" />
+   <copyField source="cat4" dest="name_autocomplete" />
 
 
 

@@ -181,17 +181,11 @@ $FinalPosition=$StartPosition+15;
 // display the total number of documents found by solr
 $NumFound= $totalresultset->getNumFound();
 if ($StartPosition-1 >= $NumFound-$NumFound %16){
-	$StartPosition=$NumFound-$NumFound %16+1;
-	$FinalPosition=$NumFound;
+//	$StartPosition=$NumFound-$NumFound %16+1;
+//	$FinalPosition=$NumFound;
+       $StartPosition=1;
+	$FinalPosition=16;
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -210,7 +204,7 @@ foreach($facet as $value => $count) {
 	    $faceteditems.=  "<a href='$currentURL$newURL$buttonreset'> $value </a>" . ' [' . $count . ']<br/>';
         }
 	$i=$i+1;
-	if ($i>10){
+	if ($i>20){
 	break;
 	}
 }
