@@ -56,15 +56,15 @@ $query->setFields(array('productssid','sellprice','picy','id'));
 	   }
       }
       $picture='<a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="250" height="250" alt="image 01" border="0" /></a>';
-      $productinfo=' <p><h3> '.$items[0].'</h3></p> <p><h4> Price: $'.$items[1].'</h4></p>';	
+      $productinfo=' <p><h3> '.$items[0].'</h3></p> <p><h4> Price:$ '.$items[1].'</h4></p>';	
 
 
 
        $arr = unserialize($_COOKIE['RecentlyViewed']);
        //new add
-       $arr[] = '<li class="span3"><div class="thumbnail">  <a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="260" height="180" alt="image 01" border="0" /></a> <br /><p> '.$items[0].'</p> <p> Price: $'.$items[1].'</p> </div></li>';
+       $arr[] = '<a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="image 01" border="0" /></a> <br /><name> '.$items[0].'</name> <br /> '.$items[1].'';
 
-      if(sizeof($arr)>8){
+      if(sizeof($arr)>10){
                 array_splice($arr, 0, 1);
       }
 
@@ -76,13 +76,14 @@ $query->setFields(array('productssid','sellprice','picy','id'));
 
 
 
+
+
 $queryMORE = $client->createMoreLikeThis();
 
 
 
 $queryMORE->setQuery("id:$id");
 $queryMORE->setMltFields('productssid,cat4');
-$queryMORE->setrows(8);
 $queryMORE->setMinimumDocumentFrequency(1);
 $queryMORE->setMinimumTermFrequency(1);
 //$queryMORE->createFilterQuery('stock')->setQuery('inStock:true');
@@ -92,10 +93,10 @@ $queryMORE->setMatchInclude(true);
 // this executes the query and returns the result
 $resultsetMore = $client->select($queryMORE);
 
-$iter=0;
+
 // show MLT documents using the resultset iterator
 foreach ($resultsetMore as $document) {
-    
+ //   echo '<hr/><table>';
 
     // the documents are also iterable, to get all fields
     foreach($document AS $field => $value)
@@ -116,24 +117,11 @@ foreach ($resultsetMore as $document) {
 		}
 	      	
     }
-	$MoreOutput= '<li class="span3"><div class="thumbnail"><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$name.'</p> <p> '.$price.'</p> </div> </li>';
-
-
-   if ($iter==0){
-        $MoreLikeThisOutput.='<div class="item active">';
-        $MoreLikeThisOutput.= '<ul class="thumbnails">';
-	 $MoreLikeThisOutput.=$MoreOutput;
-   }elseif ($iter==4){
-        $MoreLikeThisOutput.='</ul></div><div class="item">';
-        $MoreLikeThisOutput.= '<ul class="thumbnails">';
-	 $MoreLikeThisOutput.=$MoreOutput;
-   }else {
-	  $MoreLikeThisOutput.=$MoreOutput;
-   }
-   $iter=$iter+1;   
-
+	$MoreLikeThisOutput.= '<li><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><name> '.$name.'</name> <br /> '.$price.'<br> </li>';
+ //   echo '</table>';
 }
-$MoreLikeThisOutput.= '</ul></div>';
+
+	
 
 
 ?>
@@ -162,16 +150,79 @@ $MoreLikeThisOutput.= '</ul></div>';
     </style>
     <link href="style/css/bootstrap-responsive.css" rel="stylesheet">
 
+        <script type="text/javascript">
 
+		$(document).ready(function() {
+			$('#liquidproduct').liquidcarousel({height:300, duration:1000, hidearrows:false});
+		});
+		
+		
+	</script>
 
 
   </head>
 
 
 
+
+
+
+
+
+
 <body>
 
 <?php include_once("template_header.php");?>
+
+
+
+
+
+    <h2>Current Item  </h2>
+     <hr width="85%">
+    <div id="productlisting">
+    
+     <?php echo $searchOutput; ?>
+
+
+
+      </div>
+
+
+
+
+
+  <!--------------------------------------
+Start of the of the first image carosoual
+----------------------------------------->
+
+<br>
+<br>
+<h2>Similiar Items  </h2>
+<hr width="85%">
+<div id="liquidproduct" class="liquid">
+
+	<span class="previous"> <img src="style/images/previous.png" /> </span>
+    
+	<div class="wrapper">
+
+		<ul>
+			<?php echo $MoreLikeThisOutput; ?> 
+		</ul>
+	</div>
+	<span class="next"><img src="style/images/next.png" />
+     </span>
+</div>
+
+<!--------------------------------------
+Start of the first  image carosoual
+-----------------------------------------> 
+
+
+
+
+
+
 
 
     <div class="container-fluid">
@@ -185,37 +236,48 @@ $MoreLikeThisOutput.= '</ul></div>';
                   <div class="row-fluid">
 
                      <p>      
-                      <form id="addcart" name="addcart" method="post" action="./cart.php">
-                       <input type="hidden" name="name" id="name" value="<?php echo $items[0]; ?> "/>
-                       <input type="hidden" name="price" id="price" value="<?php echo $items[1]; ?> "/>
-                       <input type="hidden" name="id" id="id" value="<?php echo $items[3]; ?> "/>
-                       <input type="hidden" name="URL" id="URL" value="<?php echo $items[2]; ?> "/>
-                       <input type="submit" name="button" id="button" value="Add to Cart" />
-                      </form>
+       <form id="addcart" name="addcart" method="post" action="./cart.php">
+       <input type="hidden" name="name" id="name" value="<?php echo $items[0]; ?> "/>
+       <input type="hidden" name="price" id="price" value="<?php echo $items[1]; ?> "/>
+       <input type="hidden" name="id" id="id" value="<?php echo $items[3]; ?> "/>
+       <input type="hidden" name="URL" id="URL" value="<?php echo $items[2]; ?> "/>
+       <input type="submit" name="button" id="button" value="Add to Cart" />
+       </form>
+
                      </p>
-		    
-                    <p><a class="btn" href="#">Add to Favorites &raquo;</a></p>
+		     <p><a class="btn" href="#">Add to Favorites &raquo;</a></p>
                    </div><!--/row-->
                </div><!--/span-->
           </div><!--/row-->
 <hr>
               <div class="row-fluid">
                 <header id="overview">
-                    <h1>More Like This:</h1>
+
+<!-- Daily Deals -->
+                    <h1>Similar Items</h1>
                 </div>
-         
-			<div class="carousel slide span14" id="myCarousel">
-			<div class="carousel-inner">
-
-    		       <?php echo $MoreLikeThisOutput; ?>
-    	    
-			</div>
-			<a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
-			<a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
-			</div>
-
-           </div>
-        </div>
+<div class="row-fluid">
+                      <div class="span3">
+                          <a href="#" title="image 01"><img src="http://lh4.googleusercontent.com/public/US-Swxt81atxrCmkdef2KMHV9vY8i0iOxh8Dojke04LxsMkwp_oj_962wctatxuTJqAuio_aGnHA91uUSn4zi6o32_R_sMq_-fm79BlsbkSslh910iMxAEnXiseZ_agGQfV77pGpM5Zaqutuve67X12_kaE9wZbMDkShNVdy57P_kxFEnb4sXCTy_Q=s220-c" width="150" height="176" alt="image 01" border="0" /></a>
+                          <p>Klein Tools MM200 Auto Ranging Multimeter </p> <p>Price: $49.00 </p> 
+                          <p><a class="btn" href="#">Add to Cart &raquo;</a></p>
+                      </div><!--/span-->
+                      <div class="span3">
+                          <a href="#" title="image 01"><img src="http://lh6.googleusercontent.com/public/fW5hVuInNLs8mHj4Oau_anxrSnXnyL5vi0ZGhvsafGoF_aOxH_LLukMPxcvj8B9dZsQpmKDRAGriNTYVqWTxSNjwzDVWXELL3G_5YYGTBM4DiblP0rLmi14ywgV0Nu8cGljqAOvflTvW8IW3kT0uT_ZZG5Tomg4VZmy64QzvSkPGCOWcr6FQfKWvYg=s220-c" width="150" height="176" alt="image 01" border="0" /></a>
+                          <p>Milwaukee 2216-20NST Digital Multimeter,600V,10A </p> <p>Price: $129.00 </p>
+                          <p><a class="btn" href="#">Add to Cart &raquo;</a></p>
+                      </div><!--/span-->
+                      <div class="span3">
+                          <a href="#" title="image 01"><img src="http://lh6.googleusercontent.com/public/f1Ahu-AtAp2KCQOQaiL600flLwUs9EpfJQSPgreYEm7fLueU92kRgJ_XJbcHLAfzSIKUNnMbEsDO0dIPBAQhQoYa1K-YBp30ib5pDe-Vvzw5T3acmedESaXerhzoTgZ3oaqy-PlIRdahu6iV_S_2FVzvfrC1XcQv=s220-c" width="150" height="176" alt="image 01" border="0" /></a>
+                          <p>Fluke 321 Clamp-On Digital Multimeter, 400A, 600V, AC </p> <p>Price: $77.00 </p>
+                          <p><a class="btn" href="#">Add to Cart &raquo;</a></p>
+                      </div><!--/span-->
+                      <div class="span3">
+                          <a href="#" title="image 01"><img src="http://lh5.googleusercontent.com/public/E_X8LFtk0hVlgSUQMtlDqRtdBhKPaXgLZyj2zj3QSrFLXjhbzXzo8XrwLgKjmwucN70PkEPcEcmdFMV91mwHR4TYJb8jtM2H1K4zx066b6Ue-qz8dPkrhNVf7qm049A2GqJlarE9mSyq4a0ujsmOxgd38fhEiWXuyXN9MJsbAQ=s220-c" width="150" height="176" alt="image 01" border="0" /></a>
+                          <p>FLUKE-114 Electrical TRMS Multimeter Meter Tester Test Equipment </p> <p>Price: $126.00 </p>
+                          <p><a class="btn" href="#">Add to Cart &raquo;</a></p>
+                      </div><!--/span-->
+                  </div><!--/row-->
 
 
 

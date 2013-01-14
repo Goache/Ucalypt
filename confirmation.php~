@@ -14,7 +14,7 @@ $Items = $xml->Request->InvoiceDetailRequest->InvoiceDetailOrder->InvoiceDetailI
 foreach($Items as $a) {
        //gets the line number and quantity  
 	foreach($a->attributes() as $attr) {
-            $attr;
+            echo $attr;
        }
 
 $Price= $a->UnitPrice->Money;

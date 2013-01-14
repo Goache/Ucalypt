@@ -1,0 +1,236 @@
+
+<?php
+
+//list of variables
+$uDUNS="uDuns";
+$payloadID="23kdfre434ffre2";
+$vendorDUNS="VDuns";
+$invoicenum="1234";
+$username="Chris Miller";
+$userstreet="1 Shields Ave";
+$usercity="Davis";
+$userstate="California";
+$userzip="95616";
+$useremail="chris@davis.edu";
+$vendor="Fisher";
+$vendorstreet="123 Somewhere Apt 5";
+$vendorcity="Hooterville";
+$vendorstate="New York";
+$vendorzip="90210";
+$vendoremail="mail@fisher.com";
+$comment="nothing"; 
+
+
+$date=date('Y-m-d');
+$time=date('H:i:s');
+
+
+
+
+
+
+$Quantity="3";
+$Price="$6.54";
+$PartNumber="ABC123abc";
+$Description="This is a something";
+
+
+
+
+
+
+
+$string = <<<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cXML SYSTEM "http://xml.cXML.org/schemas/cXML/1.2.011/InvoiceDetail.dtd">
+
+
+
+<cXML timestamp="$date’T’$time" payloadID="$payloadID" version="1.2.011">
+    <cmd>login</cmd>
+    <login>$Description</login>
+
+
+
+
+<Header>
+	<From>
+		<Credential domain="$uDUNS">
+			<Identity>Ucalypt</Identity>
+		</Credential>
+	</From>
+	<To>
+		<Credential domain="$vendorDUNS">
+			<Identity>"$vendor"</Identity>
+		</Credential>
+	</To>
+	<Sender>
+		<Credential domain="[NetworkID or DUNS]">
+			<Identity>UC Davis</Identity>
+			<SharedSecret>[Shared Secret]</SharedSecret>
+		</Credential>
+		<UserAgent>[User Agent]</UserAgent>
+	</Sender>
+</Header>
+
+
+
+<Request deploymentMode="test">
+	<InvoiceDetailRequest>
+		<InvoiceDetailRequestHeader invoiceID="$invoicenum" purpose="[standard or creditMemo]" operation="new" invoiceDate="$date’T’$time">
+		<InvoiceDetailHeaderIndicator />
+		<InvoiceDetailLineIndicator />
+		<InvoicePartner>
+			<Contact role="billTo">
+				<Name xml:lang="en-US">"$username"</Name>
+				<PostalAddress>
+					<Street>"$userstreet"</Street>
+					<City>"$usercity"</City>
+					<State>"$userstate"</State>
+					<PostalCode>"$userzip"</PostalCode>
+					<Country isoCountryCode="US">United States</Country>
+				</PostalAddress>
+			</Contact>
+		</InvoicePartner>
+		<InvoicePartner>
+		<Contact role="remitTo">
+			<Name xml:lang="en-US">"$vendor"</Name>
+			<PostalAddress>
+				<Street>"$vendorstreet"</Street>
+				<City>"$vendorcity"</City>
+				<State>"$vendorstate"</State>
+				<PostalCode>"$vendorzip"</PostalCode>
+				<Country isoCountryCode="US">United States</Country>
+			</PostalAddress>
+		</Contact>
+		</InvoicePartner>
+		<InvoiceDetailShipping>
+		<Contact role="shipFrom" addressID="[Supplier AddressID]">
+	<Name xml:lang="en-US">"$vendor$"</Name>
+			<PostalAddress>
+				<Street>"$vendorstreet"</Street>
+				<City>"$vendorcity"</City>
+				<State>"$vendorstate"</State>
+				<PostalCode>"$vendorzip"</PostalCode>
+				<Country isoCountryCode="US">United States</Country>
+			</PostalAddress>
+			<Email name="default">"$vendoremail"</Email>
+			<Phone name="work">
+				<TelephoneNumber>
+					<CountryCode isoCountryCode="US">1</CountryCode>
+					<AreaOrCityCode>[Area Code]</AreaOrCityCode>
+					<Number>[Phone Number]</Number>
+				</TelephoneNumber>
+			</Phone>
+		</Contact>
+		<Contact role="shipTo" addressID="[ShipTo AddressID from PO]">
+			<Name xml:lang="en-US\">[ShipTo Name from PO]</Name>
+				<PostalAddress name="[Address Name from PO]">
+					<DeliverTo>"$username"</DeliverTo>
+					<Street>"$userstreet"</Street>
+					<City>"$usercity"</City>
+					<State>"$userstate"</State>
+					<PostalCode>"$userzip"</PostalCode>
+					<Country isoCountryCode="US">United States</Country>
+				</PostalAddress>
+			<Email name="default">"$useremail"</Email>
+			<Phone name="work">
+				<TelephoneNumber>
+					<CountryCode isoCountryCode="US">1</CountryCode>
+					<AreaOrCityCode>[Area Code]</AreaOrCityCode>
+					<Number>[Phone Number]</Number>
+				</TelephoneNumber>
+			</Phone>
+		</Contact>
+		</InvoiceDetailShipping>
+
+		<InvoiceDetailPaymentTerm payInNumberOfDays="20" percentageRate="5" />
+		<InvoiceDetailPaymentTerm payInNumberOfDays="30" percentageRate="0" />
+		<Comments xml:lang="en-US">"$comment "</Comments> 
+		<Extrinsic name="[Extrinsic Name]">[Header Extrinsic Value]</Extrinsic>
+		</InvoiceDetailRequestHeader>
+		<InvoiceDetailOrder>
+			<InvoiceDetailOrderInfo>
+				<OrderReference orderID="[orderID from Original PO]" orderDate="[orderDate from Original PO]">
+					<DocumentReference payloadID="[payloadID from Original PO]" />
+				</OrderReference>
+			</InvoiceDetailOrderInfo>
+			
+			<InvoiceDetailItem invoiceLineNumber="1" quantity="$Quantity">
+			<UnitOfMeasure>[UOM]</UnitOfMeasure>
+			<UnitPrice>
+			<Money currency="USD">$Price</Money>
+			</UnitPrice>
+			<InvoiceDetailItemReference lineNumber="[Line Number from Original PO]">
+			<ItemID>
+			<SupplierPartID>$PartNumber</SupplierPartID>
+			</ItemID>
+			<Description xml:lang="en-US">$Description</Description>
+			</InvoiceDetailItemReference>
+			<Comments xml:lang="en-US">[Line Level Comment]</Comments>
+			<Extrinsic name="CFVALUE_[Client Custom Field Internal Name]">[Extrinsic Value]</Extrinsic>
+			</InvoiceDetailItem>
+
+
+
+		</InvoiceDetailOrder>
+		<InvoiceDetailSummary>
+			<SubtotalAmount>
+				<Money currency="USD">[Subtotal]</Money>
+			</SubtotalAmount>
+			<Tax>
+				<Money currency="USD">[Total Tax Amount]</Money>
+				<Description xml:lang="en-US">[Tax Description]</Description>
+			</Tax>
+			<SpecialHandlingAmount>
+				<Money currency="USD">[Total Handling Amount]</Money>
+			</SpecialHandlingAmount>
+			<ShippingAmount>
+				<Money currency="USD">[Total Shipping Amount]</Money>
+			</ShippingAmount>
+			<GrossAmount>
+				<Money currency="USD">[Gross Amount]</Money>
+			</GrossAmount>
+			<InvoiceDetailDiscount>
+				<Money currency="USD">[Discount Amount]</Money>
+			</InvoiceDetailDiscount>
+			<NetAmount>
+				<Money currency="USD">[Net Amount]</Money>
+			</NetAmount>
+			<DueAmount>
+				<Money currency="USD">[Amount Due]</Money>
+			</DueAmount>
+		</InvoiceDetailSummary>
+	</InvoiceDetailRequest>
+</Request>
+
+
+
+</cXML> 
+
+
+XML;
+                                                                       
+                                          
+$xml = simplexml_load_string($string);
+print_r($xml);
+
+
+
+//$login = $xml->login;
+//print_r($login);
+//$login = (string) $xml->login;
+//print_r($login); 
+print 'hi<br>';
+$emal = $xml->Request->InvoiceDetailRequest->InvoiceDetailRequestHeader->InvoicePartner->Contact->PostalAddress->Street;
+print_r($emal);
+
+
+
+
+
+
+
+
+?>
+

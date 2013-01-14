@@ -20,7 +20,7 @@ jQuery(document).ready(function($){
     <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="index.php"> <img src="style/img/logo_dark_transp.png" width="80" height="80"></a>
+          <a class="brand" href="index.html"> <img src="style/img/logo_dark_transp.png" width="80" height="80"></a>
           <div class="nav pull-right">
             <ul class="nav pull-right">
               <li><a href="#">Hello Chris</a></li>

@@ -144,7 +144,7 @@ elseif(empty($keyword)!=1 and empty($Cat3)==1 and empty($Cat4)==1){
 //if there isn't a keyword with the third category selected, search it and facet over the forth category
 elseif (empty($keyword)!=1 and empty($Cat4)==1 ) { 
 	  $searchone='cat3:' . $helper->escapePhrase($Cat3);
-          $query->setQuery("productssid:.$searcharray. AND $searchone. AND $Pricerange");  
+         $query->setQuery("productssid:.$searcharray. AND $searchone. AND $Pricerange");  
 	  $facetCat='cat4';
 }
 //if there isn't a keyword with the fourth category selected, search it and don't do anymore facetting
@@ -210,15 +210,11 @@ foreach($facet as $value => $count) {
 
 
 //outsput search table
-$Out.="<table>"; //starts the html table tag
-$col=0;
+
   // show documents using the resultset iterator
   foreach ($totalresultset as $document) {
        $items=array();  //stores the current item into an array (resets each loop iteration)
         
-        if($col==0){  //starts a new 'tr' tag at the start of each row
-            $Out.="<tr>"; 
-        }
    
 
       // gets all information for each document
@@ -237,26 +233,19 @@ $col=0;
                   $items[3]=$value;
 	   }
       }     
-         $col++;   
-         if ($col <= 4){
-              $Out.="<td>"; //the item order is detemined from the setfield quaery found above
-                  //$Out.='<a href="./product.php?&id='.$items[2].'"><img src="'.$items[3].'" width="150" height="150" alt="image 01" border="0" /></a> <br /><name> '.$items[0].'</name> <br /> '.$items[1].'<br>  </li>';
-              $Out.='<li><a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="'.$items[0].'" border="0" /></a> <br /><name> '.$items[0].'</name> <br /> '.$items[1].'<br>  </li>';
-		$Out.="</td>";
+ 
+              $Out.="<div class='span3'>"; //the item order is detemined from the setfield quaery found above
+              $Out.='<a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="'.$items[0].'" border="0" /></a> <br /><p> '.$items[0].'</p> <p> '.$items[1].'</p>';
+		$Out.="</div>";
                
-           }else {
-            }
-         
-
-	if ($col >= 4){
-	      $col = 0; // reset column to 0 each time printing one row.
-              $Out.="</tr>";
-	}
 
 
      }
-$Out.="</tr>";
-$Out.="</table>"; //ends table
+
+
+
+
+
 
 
 
