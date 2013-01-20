@@ -1,9 +1,8 @@
 <?php
 //Autocomplete function!
 
-//$quer=$_REQUEST['term'];//get the search terms using 'term' for some reason
+$quer=$_POST['q'];//get the search terms that's posted with q
 
-$quer='d';
 //gets the Solarium library (it's a solr php wrapper)
 require('./Solarium/library/Solarium/Autoloader.php');
 Solarium_Autoloader::register();
@@ -25,35 +24,22 @@ $querysuggest = $clientsuggest->createSuggester();
 $querysuggest->setQuery($quer); //multiple terms
 $querysuggest->setDictionary('suggest');
 $querysuggest->setOnlyMorePopular(true);
-$querysuggest->setCount(7);
+$querysuggest->setCount(8);
 $querysuggest->setCollate(true);
 
 // this executes the query and returns the result
 $resultsetsuggest = $clientsuggest->suggester($querysuggest);
 
-$ssd=$resultsetsuggest->getCollation(); ////WORK ON THIS LATERS
 
 $arr = array();
 
-$aaa='[';  //needed for json format output
 // display results for each term
 foreach ($resultsetsuggest as $term => $termResult) {
    foreach($termResult as $result){
-           $aaa.="'".$result."',";
            array_push($arr,$result);
-
     }
 }
-$bbb=rtrim($aaa, ",");  //removes last comma, will mess up result
-$bbb.=']'; //needed for json format output
 
-echo $bbb;
-
-#echo '["'.join("\", \"", $arr).'"]';
-
-
-##print json_encode($arr);
-
-
+print json_encode($arr);
 
 ?>

@@ -1,10 +1,3 @@
-
-<script src="scripts/js/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
-<link rel="stylesheet" href="style/jquery-ui-1.9.1.custom.min.css" type="text/css" media="screen" />
-
-
-
-
     <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -191,8 +184,7 @@
  <form class="navbar-search" name="myform" action='./results.php' method='get'>
 
      
-
- <input type='text' placeholder="Search" id="searchinput" data-provide="typeahead" data-items="4" class="span8" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
+ <input type='text' placeholder="Search" id="searchinput" data-provide="typeahead" data-items="4" class="span8" autocomplete="off" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
 	 <input type="hidden" name="Next" value="0">
          <input type='submit'  class="btn" value='Go' />
 
@@ -217,21 +209,25 @@
     </div>
     </div>
 
-    <script src="scripts/js/jquery.js"></script>  
-    <script src="scripts/js/typeahead.js"></script> 
 
+<script src="scripts/js/jquery.js"></script>  
+<script src="scripts/js/typeahead.js"></script> 
 <script>  
 
+//autocomplete function using ajax
+ $(document).ready(function() {
+    $("#searchinput").typeahead({
+        minLength: 1,
+        source: function(query, process) {
+            $.post('./scripts/php/autocomplete.php', { q: query, limit: 8 }, function(data) {
+                process(JSON.parse(data));
+            });
+        }
+    });
+});
 
 
-jQuery(document).ready(function($){
-	$("#searchinput").autocomplete({source:'./scripts/php/autocomplete.php', minLength:2});
-
-
-
- 
- 
-
+//automatically searches the correctly spelled word
 function addtext() {
         document.myform.searchterms.value = "<?php echo $correctlyspellled;?>";
         document.myform.submit();
