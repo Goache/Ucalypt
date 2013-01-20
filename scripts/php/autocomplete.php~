@@ -1,8 +1,9 @@
 <?php
 //Autocomplete function!
 
-$quer=$_REQUEST['term'];//get the search terms using 'term' for some reason
+//$quer=$_REQUEST['term'];//get the search terms using 'term' for some reason
 
+$quer='d';
 //gets the Solarium library (it's a solr php wrapper)
 require('./Solarium/library/Solarium/Autoloader.php');
 Solarium_Autoloader::register();
@@ -32,16 +33,25 @@ $resultsetsuggest = $clientsuggest->suggester($querysuggest);
 
 $ssd=$resultsetsuggest->getCollation(); ////WORK ON THIS LATERS
 
+$arr = array();
+
 $aaa='[';  //needed for json format output
 // display results for each term
 foreach ($resultsetsuggest as $term => $termResult) {
    foreach($termResult as $result){
-           $aaa.="\"".$result."\",";
+           $aaa.="'".$result."',";
+           array_push($arr,$result);
+
     }
 }
 $bbb=rtrim($aaa, ",");  //removes last comma, will mess up result
 $bbb.=']'; //needed for json format output
 
-echo $bbb;//echo json array
+#echo '["'.join("\", \"", $arr).'"]';
+
+
+print json_encode($arr);
+
+
 
 ?>

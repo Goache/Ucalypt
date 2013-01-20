@@ -82,7 +82,7 @@
                       <header id="overview">
   
                           </div>
-                   Did you mean: <?php echo $Didyoumean; ?>	<br>
+                   <?php echo $Didyoumean; ?>	<br>
 		     Total number found:<?php echo $NumFound; ?> <br>   
                    Looking at Items:  <?php echo $StartPosition-1; ?> and <?php echo $FinalPosition; ?> <br>
 

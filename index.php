@@ -24,6 +24,8 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
 
 }
    $RecentOut.= '</ul></div>';
+
+
 ?>
 
 
@@ -141,7 +143,6 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="scripts/js/jquery.js"></script>
     <script src="scripts/js/bootstrap-transition.js"></script>
     <script src="scripts/js/bootstrap-alert.js"></script>
     <script src="scripts/js/bootstrap-dropdown.js"></script>

@@ -1,19 +1,7 @@
 
+<script src="scripts/js/jquery-ui-1.8.22.custom.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style/jquery-ui-1.9.1.custom.min.css" type="text/css" media="screen" />
 
-<script>
-
-function addtext() {
-        document.myform.searchterms.value = "<?php echo $correctlyspellled;?>";
-        document.myform.submit();
-}
-
-jQuery(document).ready(function($){
-	$("#searchinput").autocomplete({source:'./scripts/php/autocomplete.php', minLength:2});
-});
-
-
-
-</script>
 
 
 
@@ -200,14 +188,23 @@ jQuery(document).ready(function($){
 
           
 
- <form class="navbar-search span10" name="myform" action='./results.php' method='get'>
-         <input type='text' placeholder="Search" id="searchinput" class="searchinput" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
+ <form class="navbar-search" name="myform" action='./results.php' method='get'>
+
+     
+
+ <input type='text' placeholder="Search" id="searchinput" data-provide="typeahead" data-items="4" class="span8" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
 	 <input type="hidden" name="Next" value="0">
          <input type='submit'  class="btn" value='Go' />
 
+ 
+
+ 
  </form>
 
 
+<!-- Start Cart Div  -->
+
+     	  <a href="./cart.php"><img src="./style/images/cart.png" alt="Ucalypt Cart" width="50px" height="40px"/></a> 
 
 
 
@@ -219,3 +216,31 @@ jQuery(document).ready(function($){
       </div>
     </div>
     </div>
+
+    <script src="scripts/js/jquery.js"></script>  
+    <script src="scripts/js/typeahead.js"></script> 
+
+<script>  
+
+
+
+jQuery(document).ready(function($){
+	$("#searchinput").autocomplete({source:'./scripts/php/autocomplete.php', minLength:2});
+
+
+
+ 
+ 
+
+function addtext() {
+        document.myform.searchterms.value = "<?php echo $correctlyspellled;?>";
+        document.myform.submit();
+}
+
+
+
+</script> 
+
+
+
+ 
