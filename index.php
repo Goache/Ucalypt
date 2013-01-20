@@ -140,21 +140,7 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
 
     </div> <!-- /container -->
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="scripts/js/bootstrap-transition.js"></script>
-    <script src="scripts/js/bootstrap-alert.js"></script>
-    <script src="scripts/js/bootstrap-dropdown.js"></script>
-    <script src="scripts/js/bootstrap-tab.js"></script>
-    <script src="scripts/js/bootstrap-button.js"></script>
-    <script src="scripts/js/bootstrap-carousel.js"></script>
-    <script type="text/javascript" src="scripts/js/jquery.liquidcarousel.pack.js"></script>
-    <script>
-       $(document).ready(function(){
-        $('.carousel').carousel();
-       });
-    </script>
+
 
 
 </body>

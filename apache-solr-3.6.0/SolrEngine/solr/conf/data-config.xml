@@ -34,12 +34,12 @@
 </entity>
 
 <entity name="Fishertest" dataSource="mysql"
-   query="SELECT ID, Name, Price, Cat1, Cat2, Cat3, Cat4 FROM Fisher">
+   query="SELECT ID, Name, Price, Cat1, Cat2, Cat3, Cat4, URL FROM Fisher">
  
    <field column="ID" name="id" />
    <field column="Name" name="productssid" />
    <field column="Price" name="sellprice" />
-   <field column="Price" name="picy" />
+   <field column="URL" name="picy" />
    <field column="Cat1" name="cat1" />
    <field column="Cat2" name="cat2" />
    <field column="Cat3" name="cat3" />

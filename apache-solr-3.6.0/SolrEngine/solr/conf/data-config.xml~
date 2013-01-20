@@ -19,16 +19,34 @@
 
 <document>
 <entity name="Officetest" dataSource="mysql"
-   query="SELECT ID, Name, Price, URL FROM OfficeMax">
+   query="SELECT ID, Name, Price, URL, Cat1, Cat2, Cat3, Cat4 FROM OfficeMax">
  
    <field column="ID" name="id" />
    <field column="Name" name="productssid" />
    <field column="Price" name="sellprice" />
    <field column="URL" name="picy" />
+   <field column="Cat1" name="cat1" />
+   <field column="Cat2" name="cat2" />
+   <field column="Cat3" name="cat3" />
+   <field column="Cat4" name="cat4" />
 
 
 </entity>
 
+<entity name="Fishertest" dataSource="mysql"
+   query="SELECT ID, Name, Price, Cat1, Cat2, Cat3, Cat4, URL FROM Fisher">
+ 
+   <field column="ID" name="id" />
+   <field column="Name" name="productssid" />
+   <field column="Price" name="sellprice" />
+   <field column="URL" name="picy" />
+   <field column="Cat1" name="cat1" />
+   <field column="Cat2" name="cat2" />
+   <field column="Cat3" name="cat3" />
+   <field column="Cat4" name="cat4" />
+
+
+</entity>
 
 
 </document>

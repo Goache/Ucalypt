@@ -212,6 +212,12 @@
 
 <script src="scripts/js/jquery.js"></script>  
 <script src="scripts/js/typeahead.js"></script> 
+    <script src="scripts/js/bootstrap-transition.js"></script>
+    <script src="scripts/js/bootstrap-alert.js"></script>
+    <script src="scripts/js/bootstrap-dropdown.js"></script>
+    <script src="scripts/js/bootstrap-tab.js"></script>
+    <script src="scripts/js/bootstrap-button.js"></script>
+    <script src="scripts/js/bootstrap-carousel.js"></script>
 <script>  
 
 //autocomplete function using ajax
