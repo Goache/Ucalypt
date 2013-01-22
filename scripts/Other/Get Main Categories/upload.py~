@@ -1,0 +1,43 @@
+########################################################################
+#  Get Category Script
+#  Chris Miller
+#
+#
+#########################################################################
+
+import sys     #system library
+import MySQLdb as mdb #mysql library
+
+
+con = None
+try:
+    #Connect to mysql
+    con = mdb.connect('localhost', 'root', 
+        '1118', 'testproduct') #connection setting ('HOST', 'USERNAME', 'USERPASSWORD', 'DATABASE')
+        #starts the cursor
+    cur = con.cursor()    
+
+    select distinct firstname from employee;
+    cur.execute("Select distinct Subgroup1 from Fisher")
+
+    con.commit()
+
+#    datafile1 = open('./products.csv', 'r')  #opens file listing the datafile
+#    productreader = csv.reader(datafile1) #load datafile in a productreader
+#    for row in productreader:
+#	   Item=[]
+#	   Item=[row[3],row[10],row[5],row[6],row[9]]+GetCategory(row[10])+ [row[2]]
+
+#	   cur.execute("INSERT INTO Fisher VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE Name=%s,Description=%s,Price=%s,Manufacturer=%s,URL=%s,Subgroup1=%s,Subgroup2=%s,Subgroup3=%s,Subgroup4=%s",Item+Item[:-1]  ) #(Name,Description,Price,Manufacturer,URL,Subgroup1,Subgroup2,Subgroup3,Subgroup4,ID)  
+#	   con.commit()
+
+    con.close()
+
+
+except _mysql.Error, e:
+  
+    print "Error %d: %s" % (e.args[0], e.args[1])
+    sys.exit(1)
+
+
+

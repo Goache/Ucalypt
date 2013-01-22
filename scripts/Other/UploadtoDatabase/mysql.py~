@@ -1,0 +1,74 @@
+########################################################################
+#  Import Script from csv file into mysql database
+#  Chris Miller
+#
+#
+#########################################################################
+
+
+import csv    #library that loads csv files  
+import sys     #system library
+import MySQLdb as mdb #mysql library
+
+datafile = open('./UNSPSClist.csv', 'r')  #opens file listing UNSPSC codes
+datareader = csv.reader(datafile) #load datafile into datareader
+UNSPSC = [] #creates the UNSPSC list
+for row in datareader:
+	UNSPSC.append(row)  #loops over datareader and stores in UNSPSC list
+
+###########################################################################
+#Breakdown of UNSPSC code list
+#
+#UNSPSC[1] = ['10', 'Live Plant & Animal Material & Accessories & Supplies', '10', 'Live animals', '15', 'Livestock', '1', 'Cats', '10101501']
+
+# UNSPSC[1][0] = 10
+# UNSPSC[1][1] = Live Plant & Animal Material & Accessories & Supplies
+# UNSPSC[1][2] = 10
+# UNSPSC[1][3] = Live animals
+# UNSPSC[1][4] = 15
+# UNSPSC[1][5] = Livestock
+# UNSPSC[1][6] = 1
+# UNSPSC[1][7] = Cats
+# UNSPSC[1][8] = 10101501
+#######################################################################
+
+UNSPSC.pop(0) #deletes the labels in the first row of my list
+
+#finds the UNSPSC code and returns its categories
+def GetCategory(ProductCode):
+	for x in UNSPSC:
+		if x[8]==ProductCode:
+			return [x[1], x[3],x[5],x[7]]
+			break
+	return ['idk', 'idk','idk','idk']   #needs a default output if no code is fast
+
+
+
+con = None
+try:
+    #Connect to mysql
+    con = mdb.connect('localhost', 'root', 
+        '1118', 'testproduct') #connection setting ('HOST', 'USERNAME', 'USERPASSWORD', 'DATABASE')
+        #starts the cursor
+    cur = con.cursor()    
+
+
+    datafile1 = open('./products.csv', 'r')  #opens file listing the datafile
+    productreader = csv.reader(datafile1) #load datafile in a productreader
+    for row in productreader:
+	   Item=[]
+	   Item=[row[3],row[10],row[5],row[6],row[9]]+GetCategory(row[10])+ [row[2]]
+
+	   cur.execute("INSERT INTO Fisher VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE Name=%s,Description=%s,Price=%s,Manufacturer=%s,URL=%s,Subgroup1=%s,Subgroup2=%s,Subgroup3=%s,Subgroup4=%s",Item+Item[:-1]  ) #(Name,Description,Price,Manufacturer,URL,Subgroup1,Subgroup2,Subgroup3,Subgroup4,ID)  
+	   con.commit()
+
+    con.close()
+
+
+except _mysql.Error, e:
+  
+    print "Error %d: %s" % (e.args[0], e.args[1])
+    sys.exit(1)
+
+
+

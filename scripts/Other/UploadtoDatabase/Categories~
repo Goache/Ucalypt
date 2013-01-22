@@ -1,0 +1,395 @@
+###########################################################################
+#Fisher First Categories:
+#Select distinct Cat1 From Fisher;
+#Took ~8 hours total upload time
+#############################################################################
+
+Published Products
+Laboratory and Measuring and Observing and Testing Equipment
+Defense and Law Enforcement and Security and Safety Equipment and Supplies
+Chemicals including Bio Chemicals and Gas Materials
+Electrical Systems and Lighting and Components and Accessories and Supplies
+Medical Equipment and Accessories and Supplies
+Office Equipment and Accessories and Supplies
+Manufacturing Components and Supplies
+Fuels and Fuel Additives and Lubricants and Anti corrosive Materials
+Paper Materials and Products
+Musical Instruments and Games and Toys and Arts and Crafts and Educational Equipment and Materials a
+Drugs and Pharmaceutical Products
+Tools and General Machinery
+Printing and Photographic and Audio and Visual Equipment and Supplies
+Live Plant and Animal Material and Accessories and Supplies
+Distribution and Conditioning Systems and Equipment and Components
+Domestic Appliances and Supplies and Consumer Electronic Products
+Industrial Manufacturing and Processing Machinery and Accessories
+Furniture and Furnishings
+Power Generation and Distribution Machinery and Accessories
+Mineral and Textile and Inedible Plant and Animal Materials
+Material Handling and Conditioning and Storage Machinery and their Accessories and Supplies
+Resin and Rosin and Rubber and Foam and Film and Elastomeric Materials
+Apparel and Luggage and Personal Care Products
+Cleaning Equipment and Supplies
+Sports and Recreational Equipment and Supplies and Accessories
+Information Technology Broadcasting and Telecommunications
+Food Beverage and Tobacco Products
+Farming and Fishing and Forestry and Wildlife Machinery and Accessories
+Electronic Components and Supplies
+Structures and Building and Construction and Manufacturing Components and Supplies
+Service Industry Machinery and Equipment and Supplies
+Mining and Well Drilling Machinery and Accessories
+Building and Construction Machinery and Accessories
+Commercial and Military and Private Vehicles and their Accessories and Components
+Timepieces and Jewelry and Gemstone Products
+
+
+
+#######################################################################################################
+#Second Categories:
+#Select distinct Cat2 From Fisher WHERE Cat1='Laboratory and Measuring and Observing and Testing';
+# These are all ~1 second queries 
+#######################################################################################################
+
+::Published Products::
+Printed media
+Electronic reference material
+Signage and accessories
+
+
+
+::Laboratory and Measuring and Observing and Testing Equipment::
+Laboratory and scientific equipment
+Measuring and observing and testing instruments
+Laboratory supplies and fixtures
+
+
+
+::Defense and Law Enforcement and Security and Safety Equipment and Supplies::
+Personal safety and protection
+Fire protection
+Security surveillance and detection
+Public safety and control
+Law enforcement
+
+
+
+::Chemicals including Bio Chemicals and Gas Materials::
+Compounds and mixtures
+Additives
+Elements and gases
+Waxes and oils
+Solvents
+Colorants
+Explosive materials
+Poop
+
+
+
+::Electrical Systems and Lighting and Components and Accessories and Supplies::
+Electrical equipment and components and supplies
+Lamps and lightbulbs and lamp components
+Lighting fixtures and aAccessories
+
+
+
+
+::Medical Equipment and Accessories and Supplies::
+Emergency and field medical services products
+Medical sterilization products
+Patient care and treatment products and supplies
+Wound care products
+Respiratory and anesthesia and resuscitation produ.
+Medical apparel and textiles
+Clinical nutrition
+Surgical products
+Veterinary equipment and supplies
+Patient exam and monitoring products
+Intravenous and arterial administration products
+Dialysis equipment and supplies
+Postmortem and mortuary equipment and supplies
+Medical diagnostic imaging and nuclear medicine pr...
+Medical facility products
+Independent living aids for the physically challen...
+Dental equipment and supplies
+
+
+
+
+::Office Equipment and Accessories and Supplies::
+Office supplies
+Office machines and their supplies and accessories
+Office and desk accessories
+
+
+
+::Manufacturing Components and Supplies::
+Adhesives and sealants
+Industrial optics
+Gaskets and seals
+Machined raw stock
+Grinding and polishing and smoothing materials
+Hardware
+Paints and primers and finishes
+Housings and cabinets and casings
+Rope and chain and cable and wire and strap
+Forgings
+Pneumatic and hydraulic and electric control syste
+Bearings and bushings and wheels and gears
+
+
+
+
+::Fuels and Fuel Additives and Lubricants and Anti corrosive Materials::
+Lubricants and oils and greases and anti corrosive..
+Gaseous fuels and additives
+Fuels
+
+
+
+::Paper Materials and Products::
+Paper products
+Industrial use papers
+
+
+
+::Musical Instruments and Games and Toys and Arts and Crafts and Educational Equipment and Materials a::
+Developmental and professional teaching aids and m
+Arts and crafts equipment and accessories and supp...
+Toys and games
+Classroom decoratives and supplies
+
+
+
+::Drugs and Pharmaceutical Products::
+Anti infective drugs
+Central nervous system drugs
+Agents affecting water and electrolytes
+Antineoplastic agents
+Cardiovascular drugs
+Drugs affecting the gastrointestinal system
+Drugs affecting the respiratory tract
+Hormones and hormone antagonists
+Hematolic drugs
+Miscellaneous drug categories
+
+
+
+::Tools and General Machinery::
+Hand tools
+Hydraulic machinery and equipment
+
+
+::Printing and Photographic and Audio and Visual Equipment and Supplies::
+Photographic or filming or video equipment
+Photographic and recording media
+Audio and visual presentation and composing equipm.
+Photographic filmmaking supplies
+
+
+
+::Live Plant and Animal Material and Accessories and Supplies::
+Animal containment and habitats
+Pest control products
+Fertilizers and plant nutrients and herbicides
+Animal feed
+Saddlery and harness goods
+
+
+
+::Distribution and Conditioning Systems and Equipment and Components::
+Industrial pumps and compressors
+Fluid and gas distribution
+Industrial filtering and purification
+Heating and ventilation and air circulation
+
+
+
+::Domestic Appliances and Supplies and Consumer Electronic Products::
+Consumer electronics
+Domestic kitchenware
+Floor coverings
+Domestic appliances
+Bedclothes and table and kitchen linen and towels
+
+
+
+::Industrial Manufacturing and Processing Machinery and Accessories::
+Lapidary machinery and equipment
+Industrial process machinery and equipment and sup..
+Mixers and their parts and accessories
+Mass transfer equipment
+Raw materials processing machinery
+
+
+
+::Furniture and Furnishings::
+Classroom and instructional and institutional furn.
+Accommodation furniture
+Commercial and industrial furniture
+
+
+
+::Power Generation and Distribution Machinery and Accessories::
+Atomic and nuclear energy machinery and equipment
+Batteries and generators and kinetic power transmi..
+Electrical wire and cable and harness
+
+
+
+::Mineral and Textile and Inedible Plant and Animal Materials::
+Non edible plant and forestry products
+Minerals and ores and metals
+Earth and stone
+Fabrics and leather materials
+
+
+
+::Material Handling and Conditioning and Storage Machinery and their Accessories and Supplies::
+Containers and storage
+Packaging materials
+Material handling machinery and equipment
+Industrial refrigeration
+Packing supplies
+
+
+
+::Resin and Rosin and Rubber and Foam and Film and Elastomeric Materials::
+Resins and rosins and other resin derived material..
+Rubber and elastomers
+
+
+
+::Apparel and Luggage and Personal Care Products::
+Personal care products
+Clothing
+Luggage and handbags and packs and cases
+Footwear
+
+
+
+::Cleaning Equipment and Supplies::
+Janitorial equipment
+Cleaning and janitorial supplies
+Water and wastewater treatment supply and disposal
+
+
+
+::Sports and Recreational Equipment and Supplies and Accessories::
+Recreation and playground and swimming and spa equ...
+
+
+
+::Information Technology Broadcasting and Telecommunications::
+Computer Equipment and Accessories
+Software
+Data Voice or Multimedia Network Equipment or Plat...
+
+
+
+::Food Beverage and Tobacco Products::
+Beverages
+Seasonings and preservatives
+
+
+
+::Farming and Fishing and Forestry and Wildlife Machinery and Accessories::
+Agricultural and forestry and landscape machinery
+
+
+
+::Electronic Components and Supplies::
+Passive discrete components
+Discrete semiconductor devices
+Electronic hardware and component parts and access...
+
+
+
+::Structures and Building and Construction and Manufacturing Components and Supplies::
+Construction and maintenance support equipment
+Prefabricated structures
+Interior finishing materials
+Structural materials and basic shapes
+Insulation
+Concrete and cement and plaster
+Roads and landscape
+
+
+
+::Service Industry Machinery and Equipment and Supplies::
+Institutional food services equipment
+Vending machines ...for snickers
+
+
+
+::Mining and Well Drilling Machinery and Accessories::
+Oil and gas drilling and exploration equipment
+Oil and gas operating and production equipment
+
+
+
+::Building and Construction Machinery and Accessories::
+Heavy construction machinery and equipment
+
+
+
+::Commercial and Military and Private Vehicles and their Accessories and Components::
+Aerospace systems and components and equipment
+Transportation components and systems
+Motor vehicles
+Vehicle bodies and trailers
+
+
+
+::Timepieces and Jewelry and Gemstone Products::
+Timepieces
+Gemstones
+
+
+
+###########################################################################
+#Officemax First Categories:
+#Select distinct Cat1 From OfficeMax;
+#Took ~15min total upload
+#############################################################################
+
+Office Equipment and Accessories and Supplies
+Manufacturing Components and Supplies
+Musical Instruments and Games and Toys and Arts and Crafts and Educational Equipment and Materials a
+Resin and Rosin and Rubber and Foam and Film and Elastomeric Materials
+Paper Materials and Products
+Published Products
+Furniture and Furnishings
+Material Handling and Conditioning and Storage Machinery and their Accessories and Supplies
+Defense and Law Enforcement and Security and Safety Equipment and Supplies
+Apparel and Luggage and Personal Care Products
+Service Industry Machinery and Equipment and Supplies
+Electrical Systems and Lighting and Components and Accessories and Supplies
+Laboratory and Measuring and Observing and Testing Equipment
+Sports and Recreational Equipment and Supplies and Accessories
+Power Generation and Distribution Machinery and Accessories
+Information Technology Broadcasting and Telecommunications
+Cleaning Equipment and Supplies
+Domestic Appliances and Supplies and Consumer Electronic Products
+Industrial Manufacturing and Processing Machinery and Accessories
+Distribution and Conditioning Systems and Equipment and Components
+Food Beverage and Tobacco Products
+Printing and Photographic and Audio and Visual Equipment and Supplies
+Structures and Building and Construction and Manufacturing Components and Supplies
+Tools and General Machinery
+Electronic Components and Supplies
+Timepieces and Jewelry and Gemstone Products
+Fuels and Fuel Additives and Lubricants and Anti corrosive Materials.
+Medical Equipment and Accessories and Supplies
+Drugs and Pharmaceutical Products
+
+###############
+IN FISHER BUT NOT OFFICEMAX
+###############
+Commercial and Military and Private Vehicles and their Accessories and Components
+Building and Construction Machinery and Accessories
+Mining and Well Drilling Machinery and Accessories
+Farming and Fishing and Forestry and Wildlife Machinery and Accessories
+Chemicals including Bio Chemicals and Gas Materials
+Mineral and Textile and Inedible Plant and Animal Materials
+Live Plant and Animal Material and Accessories and Supplies
+
+
