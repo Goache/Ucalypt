@@ -39,7 +39,7 @@
 
          -Dsolr.abortOnConfigurationError=false
     -->
-  <abortOnConfigurationError>${solr.abortOnConfigurationError:true}</abortOnConfigurationError>
+  <abortOnConfigurationError>${solr.abortOnConfigurationError:false}</abortOnConfigurationError>
   
   <!-- Controls what version of Lucene various components of Solr
        adhere to.  Generally, you want to use the latest version to
