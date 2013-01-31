@@ -2925,13 +2925,13 @@ table th[class*="span"],
   color: #ffffff;
   text-decoration: none;
   background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#66CCCC), to(#53c6c6));
-  background-image: -webkit-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: -o-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: linear-gradient(to bottom, #66CCCC, #53c6c6);
+  background-image: -moz-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#66CCCC), to(#59c0d7));
+  background-image: -webkit-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: -o-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: linear-gradient(to bottom, #66CCCC, #59c0d7);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66CCCC', endColorstr='#ff53c6c6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66CCCC', endColorstr='#ff59c0d7', GradientType=0);
 }
 
 .dropdown-menu .active > a,
@@ -2939,14 +2939,14 @@ table th[class*="span"],
   color: #ffffff;
   text-decoration: none;
   background-color: #0081c2;
-  background-image: -moz-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#66CCCC), to(#53c6c6));
-  background-image: -webkit-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: -o-linear-gradient(top, #66CCCC, #53c6c6);
-  background-image: linear-gradient(to bottom, #66CCCC, #53c6c6);
+  background-image: -moz-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#66CCCC), to(#59c0d7));
+  background-image: -webkit-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: -o-linear-gradient(top, #66CCCC, #59c0d7);
+  background-image: linear-gradient(to bottom, #66CCCC, #59c0d7);
   background-repeat: repeat-x;
   outline: 0;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66CCCC', endColorstr='#ff53c6c6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff66CCCC', endColorstr='#ff59c0d7', GradientType=0);
 }
 
 .dropdown-menu .disabled > a,
@@ -3159,13 +3159,13 @@ button.close {
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   vertical-align: middle;
   cursor: pointer;
-  background-color: #6ccccc;
-  *background-color: #6ccccc;
-  background-image: -moz-linear-gradient(top, #6ccccc, #53c6c6);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6ccccc), to(#53c6c6));
-  background-image: -webkit-linear-gradient(top, #6ccccc, #53c6c6);
-  background-image: -o-linear-gradient(top, #6ccccc, #53c6c6);
-  background-image: linear-gradient(to bottom, #6ccccc, #53c6c6);
+  background-color: #6ec8dc;
+  *background-color: #6ec8dc;
+  background-image: -moz-linear-gradient(top, #6ec8dc, #59c0d7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6ec8dc), to(#59c0d7));
+  background-image: -webkit-linear-gradient(top, #6ec8dc, #59c0d7);
+  background-image: -o-linear-gradient(top, #6ec8dc, #59c0d7);
+  background-image: linear-gradient(to bottom, #6ec8dc, #59c0d7);
   background-repeat: repeat-x;
   border: 1px solid #bbbbbb;
   *border: 0;
@@ -3175,7 +3175,7 @@ button.close {
   -webkit-border-radius: 1px;
      -moz-border-radius: 1px;
           border-radius: 1px;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6cccc', endColorstr='#ff53c6c6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6cccc', endColorstr='#ff59c0d7', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   *zoom: 1;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -3189,7 +3189,7 @@ button.close {
 .btn.disabled,
 .btn[disabled] {
   color: #333333;
-  background-color: #e6e6e6;
+  background-color: #6ec8dc;
   *background-color: #d9d9d9;
 }
 
@@ -3205,7 +3205,7 @@ button.close {
 .btn:hover {
   color: #333333;
   text-decoration: none;
-  background-position: 0 -15px;
+  background-position: 0 -30px;
   -webkit-transition: background-position 0.1s linear;
      -moz-transition: background-position 0.1s linear;
        -o-transition: background-position 0.1s linear;

@@ -62,7 +62,7 @@ $query->setFields(array('productssid','sellprice','picy','id'));
 
        $arr = unserialize($_COOKIE['RecentlyViewed']);
        //new add
-       $arr[] = '<li class="span3"><div class="thumbnail">  <a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="260" height="180" alt="image 01" border="0" /></a> <br /><p> '.$items[0].'</p> <p> Price: $'.$items[1].'</p> </div></li>';
+       $arr[] = '<li class="span3"><div class="thumbnail">  <a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$items[0].'</p> <p> Price: $'.$items[1].'</p> </div></li>';
 
       if(sizeof($arr)>8){
                 array_splice($arr, 0, 1);
@@ -116,7 +116,7 @@ foreach ($resultsetMore as $document) {
 		}
 	      	
     }
-	$MoreOutput= '<li class="span3"><div class="thumbnail"><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$name.'</p> <p> '.$price.'</p> </div> </li>';
+	$MoreOutput= '<li class="span3"><div class="thumbnail"><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$name.'</p> <p> $'.$price.'</p> </div> </li>';
 
 
    if ($iter==0){
@@ -199,13 +199,19 @@ $MoreLikeThisOutput.= '</ul></div>';
                </div><!--/span-->
           </div><!--/row-->
 <hr>
+
+
+
+      <div class="container-fluid">
+          <div class="row-fluid">
               <div class="row-fluid">
                 <header id="overview">
                     <h1>More Like This:</h1>
                 </div>
          
-			<div class="carousel slide span14" id="myCarousel">
-			<div class="carousel-inner">
+			<div class="carousel slide" id="myCarousel">
+                         
+			<div style= "margin-left:40px;" class="carousel-inner">
 
     		       <?php echo $MoreLikeThisOutput; ?>
     	    
@@ -216,6 +222,15 @@ $MoreLikeThisOutput.= '</ul></div>';
 
            </div>
         </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -230,13 +245,7 @@ $MoreLikeThisOutput.= '</ul></div>';
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="scripts/js/jquery.js"></script>
-    <script src="scripts/js/bootstrap-transition.js"></script>
-    <script src="scripts/js/bootstrap-alert.js"></script>
-    <script src="scripts/js/bootstrap-dropdown.js"></script>
-    <script src="scripts/js/bootstrap-tab.js"></script>
-    <script src="scripts/js/bootstrap-button.js"></script>
-    <script src="scripts/js/bootstrap-carousel.js"></script>
+
     <script>
        $(document).ready(function(){
         $('.carousel').carousel();

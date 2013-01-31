@@ -64,7 +64,7 @@ if (empty($keyword)!=1){
 	//spell check libraries
 	$spellcheck = $query->getSpellcheck();
 	$spellcheck->setQuery(".$keyword.");
-	//$spellcheck->setBuild(true);  ///only build once!!!
+	$spellcheck->setBuild(true);  ///only build once!!!
 	$spellcheck->setExtendedResults(true);
 	$spellcheck->setCollate(true);
 
@@ -177,9 +177,10 @@ if ($sort == 'SORT_ASC') {
 //gets the complete solr responce 
 $totalresultset = $client->select($query);
 
-$FinalPosition=$StartPosition+15;
 // display the total number of documents found by solr
 $NumFound= $totalresultset->getNumFound();
+$pages=ceil($NumFound/16.0);
+$CurrentPage=ceil($StartPosition/16.0);
 if ($StartPosition-1 >= $NumFound-$NumFound %16){
 	$StartPosition=$NumFound-$NumFound %16+1;
 	$FinalPosition=$NumFound;
@@ -208,18 +209,19 @@ foreach($facet as $value => $count) {
 }
 
 
-
-//outsput search table
+$counter=1;
+//outputs search table
 
   // show documents using the resultset iterator
   foreach ($totalresultset as $document) {
        $items=array();  //stores the current item into an array (resets each loop iteration)
-        
+         
    
 
       // gets all information for each document
       foreach($document AS $field => $value)
       {
+	
           if ($field=='productssid'){
                   $items[0]=$value;
 	  }
@@ -235,10 +237,15 @@ foreach($facet as $value => $count) {
       }     
  
               $Out.="<div class='span3'>"; //the item order is detemined from the setfield quaery found above
-              $Out.='<a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="'.$items[0].'" border="0" /></a> <br /><p> '.$items[0].'</p> <p> '.$items[1].'</p>';
-		$Out.="</div>";
+              $Out.='<a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="'.$items[0].'" border="0" /></a> <br /><p> '.$items[0].'</p> <p> $'.$items[1].'</p>';
+	      $Out.="</div>";
                
-
+             if ($counter%4==0){
+ 		$Out.= "</div><div class='row-fluid'>";
+		$counter=0;
+               
+	     }
+		$counter=$counter+1;
 
      }
 

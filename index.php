@@ -11,7 +11,7 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
    if ($i==0){
         $RecentOut.='<div class="item active">';
         $RecentOut.= '<ul class="thumbnails">';
-	 $RecentOut.=$item;
+	 $RecentOut.= $item;
    }elseif ($i==4){
         $RecentOut.='</ul></div><div class="item">';
         $RecentOut.= '<ul class="thumbnails">';
@@ -27,10 +27,6 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
 
 
 ?>
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -112,8 +108,9 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
                     <h1>Recently Viewed</h1>
                 </div>
          
-			<div class="carousel slide span12" id="myCarousel">
-			<div class="carousel-inner">
+			<div class="carousel slide" id="myCarousel">
+                         
+			<div style= "margin-left:40px;" class="carousel-inner">
 
     		       <?php echo $RecentOut; ?>
     	    

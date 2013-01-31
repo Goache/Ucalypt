@@ -39,7 +39,7 @@
 
   <div class="container-fluid">
           <hr>
-          <div class="row-fluid">
+          <div class="row-fluid" style="padding-top: 20px;">
               <div class="span3">
                   <div class="well sidebar-nav">
                       <ul class="nav nav-list">
@@ -50,12 +50,12 @@
          <input type="hidden" name="cat2" size='2' value="<?php echo $Cat2 ?>" />
          <input type="hidden" name="cat3" size='2' value="<?php echo $Cat3 ?>" />
          <input type="hidden" name="cat4" size='2' value="<?php echo $Cat4 ?>" />
-         Min: <input type="number" name="minprice" width="30" style="width: 30px" value="<?php echo $_GET['minprice']; ?>" />  
-         Max: <input type="number" name="maxprice" width="30" style="width: 30px" value="<?php echo $_GET['maxprice']; ?>" /> 
-	 Sort: <select name="sort"  width="130" style="width: 80px" >
-		<option value="SORT_DEFAULT" <?php if($_REQUEST['sort']=='SORT_DEFAULT') echo "selected='selected'";?>>Relevant</option>		
-		<option value="SORT_ASC"  <?php if($_REQUEST['sort']=='SORT_ASC') echo "selected='selected'";?>>Price Inc</option>
-		<option value="SORT_DESC" <?php if($_REQUEST['sort']=='SORT_DESC') echo "selected='selected'";?>>Price Dec</option>
+         Min: <input type="number" name="minprice" style="width: 30px" value="<?php echo $_GET['minprice']; ?>" />  
+         Max: <input type="number" name="maxprice"style="width: 30px" value="<?php echo $_GET['maxprice']; ?>" /> <br>
+	 Sort: <select name="sort" style="width: 120px" >
+		<option value="SORT_DEFAULT" <?php if($_REQUEST['sort']=='SORT_DEFAULT') echo "selected='selected'";?>>Relevance</option>		
+		<option value="SORT_ASC"  <?php if($_REQUEST['sort']=='SORT_ASC') echo "selected='selected'";?>>Lowest Price</option>
+		<option value="SORT_DESC" <?php if($_REQUEST['sort']=='SORT_DESC') echo "selected='selected'";?>>Highest Price</option>
 
 		</select>
          <input type='submit'  class="submitd" value='Go' />
@@ -63,14 +63,7 @@
         </form>
 
 
-
-
-
-
-
-
-
-                          <li class="nav-header">Sort By</li>
+                          <li class="nav-header">Refine</li>
 
                            <?php echo $faceteditems; ?>
 
@@ -82,31 +75,31 @@
                       <header id="overview">
   
                           </div>
-                   <?php echo $Didyoumean; ?>	<br>
-		     Total number found:<?php echo $NumFound; ?> <br>   
-                   Looking at Items:  <?php echo $StartPosition-1; ?> and <?php echo $FinalPosition; ?> <br>
-
-
-   	<form name="nextprevious" id="myformmore" action="./results.php" method='get'>
+                   <?php echo $Didyoumean; ?>	
+   	<form name="nextprevious" class="pull-right" id="myformmore" action="./results.php" method='get'>
 
          <input type="hidden" name="searchterms" size='2' value="<?php echo $keyword ?>" />
          <input type="hidden" name="cat2" size='2' value="<?php echo $Cat2 ?>" />
          <input type="hidden" name="cat3" size='2' value="<?php echo $Cat3 ?>" />
          <input type="hidden" name="cat4" size='2' value="<?php echo $Cat4 ?>" />
-          <input type="hidden" name="minprice" size='1' value="<?php echo $_GET['minprice']; ?>" /> <br>
-         <input type="hidden" name="maxprice" size='1' value="<?php echo $_GET['maxprice']; ?>" /> <br>
+          <input type="hidden" name="minprice" size='1' value="<?php echo $_GET['minprice']; ?>" /> 
+         <input type="hidden" name="maxprice" size='1' value="<?php echo $_GET['maxprice']; ?>" /> 
 	 <select style="visibility:hidden;" name="sort"  >
 		<option value="SORT_DEFAULT" <?php if($_REQUEST['sort']=='SORT_DEFAULT') echo "selected='selected'";?>> Relevant</option>		
 		<option value="SORT_ASC"  <?php if($_REQUEST['sort']=='SORT_ASC') echo "selected='selected'";?>>  Price Ascending</option>
 		<option value="SORT_DESC" <?php if($_REQUEST['sort']=='SORT_DESC') echo "selected='selected'";?>  > Price Descending</option>
 
 		</select>
-         <button type="submit" name="Previous" value="<?php echo $StartPosition ?>">Previous</button>
-	 <button type="submit" name="Next" value="<?php echo $StartPosition ?>">Next</button>
+         <button class="btn" type="submit" name="Previous" value="<?php echo $StartPosition ?>">Previous</button>
+          <?php echo $CurrentPage; ?>  of  <?php echo $pages; ?> 
+	 <button class="btn" type="submit" name="Next" value="<?php echo $StartPosition ?>">Next</button>
         </form>
 
 
 
+<br>
+<br>
+<br>
 
 
 

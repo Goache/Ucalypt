@@ -62,7 +62,7 @@ $query->setFields(array('productssid','sellprice','picy','id'));
 
        $arr = unserialize($_COOKIE['RecentlyViewed']);
        //new add
-       $arr[] = '<li class="span3"><div class="thumbnail">  <a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="260" height="180" alt="image 01" border="0" /></a> <br /><p> '.$items[0].'</p> <p> Price: $'.$items[1].'</p> </div></li>';
+       $arr[] = '<li class="span3"><div class="thumbnail">  <a href="./product.php?&id='.$items[3].'"><img src="'.$items[2].'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$items[0].'</p> <p> Price: $'.$items[1].'</p> </div></li>';
 
       if(sizeof($arr)>8){
                 array_splice($arr, 0, 1);
@@ -116,7 +116,7 @@ foreach ($resultsetMore as $document) {
 		}
 	      	
     }
-	$MoreOutput= '<li class="span3"><div class="thumbnail"><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$name.'</p> <p> '.$price.'</p> </div> </li>';
+	$MoreOutput= '<li class="span3"><div class="thumbnail"><a href="./product.php?&id='.$id.'"><img src="'.$URL.'" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> '.$name.'</p> <p> $'.$price.'</p> </div> </li>';
 
 
    if ($iter==0){
@@ -190,7 +190,7 @@ $MoreLikeThisOutput.= '</ul></div>';
                        <input type="hidden" name="price" id="price" value="<?php echo $items[1]; ?> "/>
                        <input type="hidden" name="id" id="id" value="<?php echo $items[3]; ?> "/>
                        <input type="hidden" name="URL" id="URL" value="<?php echo $items[2]; ?> "/>
-                       <input type="submit" name="button" id="button" value="Add to Cart" />
+                       <input type="submit" name="button" class="btn" id="button" value="Add to Cart" />
                       </form>
                      </p>
 		    
@@ -199,13 +199,19 @@ $MoreLikeThisOutput.= '</ul></div>';
                </div><!--/span-->
           </div><!--/row-->
 <hr>
+
+
+
+      <div class="container-fluid">
+          <div class="row-fluid">
               <div class="row-fluid">
                 <header id="overview">
                     <h1>More Like This:</h1>
                 </div>
          
-			<div class="carousel slide span14" id="myCarousel">
-			<div class="carousel-inner">
+			<div class="carousel slide" id="myCarousel">
+                         
+			<div style= "margin-left:40px;" class="carousel-inner">
 
     		       <?php echo $MoreLikeThisOutput; ?>
     	    
@@ -216,6 +222,15 @@ $MoreLikeThisOutput.= '</ul></div>';
 
            </div>
         </div>
+
+
+
+
+
+
+
+
+
 
 
 

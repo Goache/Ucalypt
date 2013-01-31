@@ -1,7 +1,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
-        <div class="container">
-          <a class="brand" href="index.php"> <img src="style/img/logo_dark_transp.png" width="80" height="80"></a>
+        <div class="containers">
+          <a class="brand" href="index.php"> <img src="style/img/logo_dark_transp.png" width="105" height="47"></a>
           <div class="nav pull-right">
             <ul class="nav pull-right">
               <li><a href="#">Hello Chris</a></li>
@@ -181,12 +181,13 @@
 
           
 
- <form class="navbar-search" name="myform" action='./results.php' method='get'>
+ <form class="navbar-search span10" name="myform" action='./results.php' method='get'>
 
      
- <input type='text' placeholder="Search" id="searchinput" data-provide="typeahead" data-items="4" class="span8" autocomplete="off" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
+ <input type='text' placeholder="Search" class="search-query span8" id="searchinput" data-provide="typeahead" data-items="4" class="span8" autocomplete="off" name='searchterms' size='30' value= '<?php echo $_GET['searchterms']; ?>' />
 	 <input type="hidden" name="Next" value="0">
-         <input type='submit'  class="btn" value='Go' />
+
+  <button type="submit" class="btn">Search</button>
 
  
 
@@ -196,7 +197,7 @@
 
 <!-- Start Cart Div  -->
 
-     	  <a href="./cart.php"><img src="./style/images/cart.png" alt="Ucalypt Cart" width="50px" height="40px"/></a> 
+     	  <a href="./cart.php"><img src="./style/img/Icons/cart.png" alt="Ucalypt Cart" width="50px" height="40px"/></a> 
 
 
 
@@ -207,11 +208,17 @@
         </div>
       </div>
     </div>
-    </div>
+    
 
 
 <script src="scripts/js/jquery.js"></script>  
 <script src="scripts/js/typeahead.js"></script> 
+    <script src="scripts/js/bootstrap-transition.js"></script>
+    <script src="scripts/js/bootstrap-alert.js"></script>
+    <script src="scripts/js/bootstrap-dropdown.js"></script>
+    <script src="scripts/js/bootstrap-tab.js"></script>
+    <script src="scripts/js/bootstrap-button.js"></script>
+    <script src="scripts/js/bootstrap-carousel.js"></script>
 <script>  
 
 //autocomplete function using ajax
