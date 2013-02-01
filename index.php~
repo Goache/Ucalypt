@@ -110,7 +110,7 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
          
 			<div class="carousel slide" id="myCarousel">
                          
-			<div style= "margin-left:40px;margin-right:40px;" class="carousel-inner">
+			<div style= "margin-left:40px;" class="carousel-inner">
 
     		       <?php echo $RecentOut; ?>
     	    
@@ -124,7 +124,47 @@ foreach(unserialize($_COOKIE["RecentlyViewed"]) as $item) {
 
 
 
+      <div class="container-fluid">
+          <div class="row-fluid">
+              <div class="row-fluid">
+                <header id="overview">
+                    <h1>Deals</h1>
+                </div>
+         
+			<div class="carousel slide" id="myCarousel">
+                         
+			<div style= "margin-left:40px;" class="carousel-inner">
 
+    		       <div class="item active"><ul class="thumbnails"><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198-073"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/179310.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Parker - IM Series Roller Ball Pens - Gunmetal, Black, Medium</p> <p> $25.39</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198-071"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/150185.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - 6/Pack, 1.27 oz</p> <p> $5.26</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198089"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/222860.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Permanent Kidde - Front-Load Smoke Alarm - 5-year</p> <p> $14.58</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A100-214"><img src="http://img3.fastenal.com/productimages/0321062_hr1c.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Vitrified Toolroom Wheel</p> <p> $101.93</p> </div> </li></ul></div><div class="item"><ul class="thumbnails"><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A16008CGS5"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/222860.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Kidde - Front-Load Smoke Alarm - 5-year</p> <p> $4.26</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198095"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/218322.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - Clear - 6/Pack, 0.26 oz</p> <p> $4.02</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198096"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/133767.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - 6/Pack, 0.26 oz</p> <p> $4.02</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A1E517"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/144526.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Elmers - Glue Sticks - 12/Pack, 0.77 oz</p> <p> $12.2</p> </div> </li></ul></div>    	    
+			</div>
+			<a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+			<a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+			</div>
+
+           </div>
+        </div>
+
+
+
+      <div class="container-fluid">
+          <div class="row-fluid">
+              <div class="row-fluid">
+                <header id="overview">
+                    <h1>Favorites</h1>
+                </div>
+         
+			<div class="carousel slide" id="myCarousel">
+                         
+			<div style= "margin-left:40px;" class="carousel-inner">
+
+    		       <div class="item active"><ul class="thumbnails"><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198-071"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/222864.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Kidde - Pro Line Tri-Class Dry Chemical Fire Extinguishers - 18 Lbs., Ul Rating-10A-80B:C, Aluminum </p> <p> $158.31</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198-073"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/180008.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p>Post-It - Note Pads in Pastel Colors - Assorted, 5/Pack, 3 x 5, </p> <p> $5.88</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198089"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/161623.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> 3M - Notebook/LCD Desktop Monitor Privacy Filters - 15.4 Widescreen</p> <p> $45.18</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A100-214"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/179824.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - 3/Pack, 0.26 oz</p> <p> $0.93</p> </div> </li></ul></div><div class="item"><ul class="thumbnails"><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A16008CGS5"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/146737.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Scotch - Clear Glue Sticks - 5/Pack, 0.27 oz, Stick</p> <p> $4.26</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198095"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/218322.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - Clear - 6/Pack, 0.26 oz</p> <p> $4.02</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A198096"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/133767.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Avery - Glue Sticks - 6/Pack, 0.26 oz</p> <p> $4.02</p> </div> </li><li class="span3"><div class="thumbnail"><a href="./product.php?&id=A1E517"><img src="https://maxbuyer.officemax.com/shop/images/products/imgs_180/144526.jpg" width="150" height="150" alt="image 01" border="0" /></a> <br /><p> Elmers - Glue Sticks - 12/Pack, 0.77 oz</p> <p> $12.2</p> </div> </li></ul></div>    	    
+			</div>
+			<a data-slide="prev" href="#myCarousel" class="left carousel-control">‹</a>
+			<a data-slide="next" href="#myCarousel" class="right carousel-control">›</a>
+			</div>
+
+           </div>
+        </div>
 
 
 
