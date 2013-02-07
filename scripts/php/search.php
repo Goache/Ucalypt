@@ -120,6 +120,12 @@ else{
 //this is used to enter a phrase into a solr query
 $helper = $query->getHelper();
  
+
+
+
+
+
+
 //this series of if statements manges if the query comes from the catelog or the search bar (including facetting)
 
 //if there's a keyword and only a second category, search it and facet over the third category
