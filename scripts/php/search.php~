@@ -64,7 +64,7 @@ if (empty($keyword)!=1){
 	//spell check libraries
 	$spellcheck = $query->getSpellcheck();
 	$spellcheck->setQuery(".$keyword.");
-	$spellcheck->setBuild(true);  ///only build once!!!
+	#$spellcheck->setBuild(true);  ///only build once!!!
 	$spellcheck->setExtendedResults(true);
 	$spellcheck->setCollate(true);
 

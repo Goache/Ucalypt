@@ -72,7 +72,7 @@
                         <li><a href="results.php?cat2=Fluid and gas distribution">Fluid and gas distribution</a></li>
 			<li><a href="results.php?cat2=Industrial filtering and purification">Industrial filtering and purification</a></li>
 			<li><a href="results.php?cat2=Heating and ventilation and air circulation">Heating and ventilation and air circulation</a></li>
-</li>
+</ul></li>
 
 
                 <li class="dropdown-submenu"><a tabindex="-1">Electronics

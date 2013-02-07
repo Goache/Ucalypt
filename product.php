@@ -46,7 +46,7 @@ $query->setFields(array('productssid','sellprice','picy','id'));
                   $items[0]=$value;
 	  }
           if ($field=='sellprice'){
-                  $items[1]=$value;
+                  $items[1]=money_format("%1.2n",$value);
 	   }
           if ($field=='picy'){
                   $items[2]=$value;
@@ -109,7 +109,7 @@ foreach ($resultsetMore as $document) {
 		     $name=$value;
 		}
 		if ($field=='sellprice'){
-		     $price=$value;
+		     $price=money_format("%1.2n",$value);
 		}
 		if ($field=='picy'){ 
 		     $URL=$value;

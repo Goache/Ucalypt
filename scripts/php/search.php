@@ -226,7 +226,7 @@ $counter=1;
                   $items[0]=$value;
 	  }
           if ($field=='sellprice'){
-                  $items[1]=$value;
+                  $items[1]=money_format("%1.2n",$value);
 	   }
           if ($field=='picy'){
                   $items[2]=$value;
