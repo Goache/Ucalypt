@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
     <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="containers">
@@ -233,7 +236,7 @@
 
 <!-- Start Cart Div  -->
 
-     	  <a href="./cart.php"><img src="./style/img/Icons/cart.png" alt="Ucalypt Cart" width="50px" height="40px"/></a> 
+     	  <a href="./cart.php"><img src="./style/img/Icons/cart.png" alt="Ucalypt Cart" width="50px" height="40px"/> <?php echo $_SESSION["Cart_ItemCount"]	; ?></a> 
 
 
 

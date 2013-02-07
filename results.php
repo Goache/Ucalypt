@@ -50,8 +50,8 @@
          <input type="hidden" name="cat2" size='2' value="<?php echo $Cat2 ?>" />
          <input type="hidden" name="cat3" size='2' value="<?php echo $Cat3 ?>" />
          <input type="hidden" name="cat4" size='2' value="<?php echo $Cat4 ?>" />
-         Min: <input type="number" name="minprice" style="width: 30px" value="<?php echo $_GET['minprice']; ?>" />  
-         Max: <input type="number" name="maxprice"style="width: 30px" value="<?php echo $_GET['maxprice']; ?>" /> <br>
+         Min: <input type="text" name="minprice" style="width: 30px" value="<?php echo $_GET['minprice']; ?>" />  
+         Max: <input type="text" name="maxprice"style="width: 30px" value="<?php echo $_GET['maxprice']; ?>" /> <br>
 	 Sort: <select name="sort" style="width: 120px" >
 		<option value="SORT_DEFAULT" <?php if($_REQUEST['sort']=='SORT_DEFAULT') echo "selected='selected'";?>>Relevance</option>		
 		<option value="SORT_ASC"  <?php if($_REQUEST['sort']=='SORT_ASC') echo "selected='selected'";?>>Lowest Price</option>
@@ -161,15 +161,6 @@
         $('.carousel').carousel();
        });
     </script>
-
-
-
-
-
-
-
-
-
 
 
 

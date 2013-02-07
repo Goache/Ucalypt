@@ -1,6 +1,3 @@
-
-
-
 <?php
 //This adds an item into the cart
 session_start();  //look into cookies later
@@ -256,6 +253,9 @@ XML;
 //
 // This goes through the cart
 //
+
+$_SESSION["Cart_ItemCount"]=0;
+
  if(!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"])< 1) {
 	   $cartOutput="Your Cart is empty!!!! :-( <br/>";
    } else {
@@ -300,10 +300,11 @@ XML;
 		 //allows a user to remove a single item
 		 $cartOutput .='<td> <form action="./cart.php" method="post"> <input name="deleteButton' .$id.' "type= "submit"  value="X"/> <input name="index_to_remove" type="hidden" value="'.$i.'"/>  </form> </td>';
 		 $cartOutput .="</tr>";
-			
+		 	
 
- 	
-
+ 	        $_SESSION["Cart_ItemCount"]=$_SESSION["Cart_ItemCount"]+1;
+	 
+               
 
   
 
@@ -445,8 +446,8 @@ XML;
 </form>
 <a href="cart.php?cmd=emptycart"> Empty Your Cart </a>
 
+ <?php echo $_SESSION["Cart_ItemCount"]	; ?>
 
-	
 </div>
 
 
