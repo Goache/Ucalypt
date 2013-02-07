@@ -76,6 +76,28 @@
   
                           </div>
                    <?php echo $Didyoumean; ?>	
+
+
+
+
+
+
+
+	
+
+    <ul class="breadcrumb" class="pull-right">
+    <li><?php if(empty($keyword)!=1) {echo '<a href="/results.php?searchterms=', urlencode($keyword), '  ">'.$keyword.'</a>';}else{echo '<a href="/results.php?cat2=', urlencode($Cat2), '  ">'.$Cat2.'</a>';}   ?></a> <span class="divider">/</span></li>
+
+
+        <li><?php if(empty($keyword)!=1) {echo '<a href="/results.php?searchterms='. urlencode($keyword). '&cat3='. urlencode($Cat3).'  ">'.$Cat3.'</a>';}else{echo '<a href="/results.php?cat2='. urlencode($Cat2). '&cat3='.urlencode($Cat3).'  ">'.$Cat3.'</a>';}   ?></a> <span class="divider">/</span></li>
+
+
+
+
+    <li class="active"> <?php echo $Cat4; ?></li>
+    </ul>
+
+
    	<form name="nextprevious" class="pull-right" id="myformmore" action="./results.php" method='get'>
 
          <input type="hidden" name="searchterms" size='2' value="<?php echo $keyword ?>" />

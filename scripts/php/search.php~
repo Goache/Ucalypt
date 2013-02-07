@@ -120,21 +120,29 @@ else{
 //this is used to enter a phrase into a solr query
 $helper = $query->getHelper();
  
+
+$Category2=$helper->escapePhrase($Cat2);
+$Category3=$helper->escapePhrase($Cat3);
+$Category4=$helper->escapePhrase($Cat4);
+
+
+
+
 //this series of if statements manges if the query comes from the catelog or the search bar (including facetting)
 
 //if there's a keyword and only a second category, search it and facet over the third category
 if (empty($keyword)==1 and empty($Cat3)==1 and empty($Cat4)==1 ) { 
-          $query->setQuery("$Pricerange AND cat2:" . $helper->escapePhrase($Cat2));
+          $query->setQuery("$Pricerange AND cat2:" .$Category2);
 	  $facetCat='cat3';
 }   
 //if there's a keyword with the third category selected, search it and facet over the forth category
 elseif (empty($keyword)==1 and empty($Cat4)==1 ) {
-          $query->setQuery("$Pricerange AND cat3:" . $helper->escapePhrase($Cat3));
+          $query->setQuery("$Pricerange AND cat3:" . $Category3);
 	  $facetCat='cat4'; 	
 }
 //if there's a keyword with the fourth category selected, search it and don't do anymore faceting
 elseif (empty($keyword)==1) {
-          $query->setQuery("$Pricerange AND cat4:" . $helper->escapePhrase($Cat4));  	
+          $query->setQuery("$Pricerange AND cat4:" . $Category4= $Category4  );  	
 }
 //if there isn't a keyword with the second category selected, search it and facet over the third category
 elseif(empty($keyword)!=1 and empty($Cat3)==1 and empty($Cat4)==1){
@@ -143,13 +151,13 @@ elseif(empty($keyword)!=1 and empty($Cat3)==1 and empty($Cat4)==1){
 }      	
 //if there isn't a keyword with the third category selected, search it and facet over the forth category
 elseif (empty($keyword)!=1 and empty($Cat4)==1 ) { 
-	  $searchone='cat3:' . $helper->escapePhrase($Cat3);
+	  $searchone='cat3:' . $Category3;
          $query->setQuery("productssid:.$searcharray. AND $searchone. AND $Pricerange");  
 	  $facetCat='cat4';
 }
 //if there isn't a keyword with the fourth category selected, search it and don't do anymore facetting
 elseif (empty($keyword)!=1) { 
-	  $searchone='cat4:' . $helper->escapePhrase($Cat4);
+	  $searchone='cat4:' . $Category4;
           $query->setQuery("productssid:.$searcharray. AND $searchone. AND $Pricerange");  
 }
 
